@@ -1,11 +1,10 @@
 import React, { Children } from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import get from "lodash/get";
 import { Helmet } from "react-helmet";
 import Hero from "../components/hero";
 import Layout from "../components/layout";
 import ArticlePreview from "../components/article-preview";
-import Link from "gatsby-image";
 
 const FeaturedSocials = ({ socials }) => (
   <div className="columns row">
@@ -32,9 +31,11 @@ class RootIndex extends React.Component {
             title="Social experiences for distributed teams"
             subtitle="Book amazing team-building events which your employees can enjoy from"
           >
-            <button class="button is-primary mt-5 has-text-weight-semibold">
-              Join the club
-            </button>
+            <Link to="/signup">
+              <button class="button is-primary mt-5 has-text-weight-semibold">
+                Join the club
+              </button>
+            </Link>
           </Hero>
           <div className="wrapper">
             <h2 className="section-headline">Featured experiences</h2>
