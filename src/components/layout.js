@@ -2,12 +2,7 @@ import React from "react";
 import "./base.css";
 import Container from "./container";
 import Navigation from "./navigation";
-
-const Header = () => (
-  <div style={{ margin: "0 auto", paddingTop: "10%", textAlign: "center" }}>
-    <h1> ⛰Picoblog </h1>{" "}
-  </div>
-);
+import { Header } from "./Header";
 
 class Template extends React.Component {
   render() {
@@ -15,8 +10,18 @@ class Template extends React.Component {
 
     return (
       <Container>
-        <Header />
-        <Navigation />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            paddingTop: "5%",
+            width: "100%",
+          }}
+        >
+          <Header />
+          <Navigation />
+        </div>
         {children}
       </Container>
     );
