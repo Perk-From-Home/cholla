@@ -1,19 +1,17 @@
-import React from 'react'
-import Img from 'gatsby-image'
-
-import styles from './hero.module.css'
+import React from "react";
+import Img from "gatsby-image";
+import lightHero from "../assets/images/photo-1545529468-42764ef8c85f.jpeg";
+import styles from "./hero.module.css";
 
 export default ({ data }) => (
   <div className={styles.hero}>
-    <Img
-      className={styles.heroImage}
-      alt={data.name}
-      fluid={data.heroImage.fluid}
-    />
+    <img className={styles.heroImage} alt="hero-image" src={lightHero} />
     <div className={styles.heroDetails}>
-      <h3 className={styles.heroHeadline}>{data.name}</h3>
-      <p className={styles.heroTitle}>{data.title}</p>
-      <p>{data.shortBio.shortBio}</p>
+      <h3 className={styles.heroHeadline}>
+        Social experiences for distributed teams
+      </h3>
+      {/* <p className={styles.heroTitle}>{data.title}</p> */}
+      {/* <p>{data.shortBio.shortBio}</p> */}
     </div>
   </div>
-)
+);
