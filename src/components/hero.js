@@ -1,17 +1,20 @@
-import React from "react";
+import React, { Children } from "react";
 import Img from "gatsby-image";
 import lightHero from "../assets/images/photo-1545529468-42764ef8c85f.jpeg";
 import styles from "./hero.module.css";
+// import Button from "../components/Button";
+import "../pages/mystyles.scss";
+import Link from "gatsby-image";
 
-export default ({ data }) => (
+const Hero = ({ title, subtitle, ...props }) => (
   <div className={styles.hero}>
-    <img className={styles.heroImage} alt="hero-image" src={lightHero} />
-    <div className={styles.heroDetails}>
-      <h3 className={styles.heroHeadline}>
-        Social experiences for distributed teams
-      </h3>
-      {/* <p className={styles.heroTitle}>{data.title}</p> */}
-      {/* <p>{data.shortBio.shortBio}</p> */}
+    {/* <img className={styles.heroImage} alt="hero-image" src={lightHero} /> */}
+    <div className={styles.heroImage}>
+      <h3 className={styles.heroHeadline}>{title}</h3>
+      <p class="is-size-4">{subtitle}</p>
+      {props.children}
     </div>
   </div>
 );
+
+export default Hero;
