@@ -32,11 +32,9 @@ class RootIndex extends React.Component {
             title="Social experiences for distributed teams"
             subtitle="Book amazing team-building events which your employees can enjoy from"
           >
-            <Link to={`/signup`}>
-              <button class="button is-primary mt-5 has-text-weight-semibold">
-                Join the club
-              </button>
-            </Link>
+            <button class="button is-primary mt-5 has-text-weight-semibold">
+              Join the club
+            </button>
           </Hero>
           <div className="wrapper">
             <h2 className="section-headline">Featured experiences</h2>
@@ -68,7 +66,6 @@ export const pageQuery = graphql`
           minParticipants
           maxParticipants
           provider
-          slug
         }
       }
     }
