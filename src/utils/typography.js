@@ -4,6 +4,13 @@ import altonTheme from "typography-theme-alton";
 // if (process.env.NODE_ENV !== `production`) {
 //   Typography.injectStyles();
 // }
+
+altonTheme.overrideStyles = ({ rhythm }, options) => ({
+  "h1,h2, h2": {
+    fontSize: "2em",
+    fontWeight: "normal",
+  },
+});
 const typography = new Typography(altonTheme);
 
 export default typography;

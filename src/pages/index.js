@@ -37,8 +37,25 @@ class RootIndex extends React.Component {
               </button>
             </Link>
           </Hero>
-          <div className="wrapper">
-            <h2 className="section-headline">Featured experiences</h2>
+          <div
+            className="wrapper"
+            style={{
+              width: "calc(100% - 10vmin)",
+              margin: "0 auto",
+              padding: "5vmin 0",
+            }}
+          >
+            <h2
+              className="section-headline"
+              style={{
+                borderBottom: " 1px solid #ddd",
+                padding: "0 0 0.4em 0",
+                margin: "0 0 5vmin 0",
+              }}
+              class="is-size-3 pb-5"
+            >
+              Featured experiences
+            </h2>
             <FeaturedSocials socials={socials} />
           </div>
           {/* <div className="wrapper">
