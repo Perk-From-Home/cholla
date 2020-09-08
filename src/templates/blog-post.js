@@ -4,10 +4,7 @@ import { Helmet } from "react-helmet";
 import get from "lodash/get";
 import Img from "gatsby-image";
 import Layout from "../components/layout";
-import Gallery from "@browniebroke/gatsby-image-gallery";
 import "@browniebroke/gatsby-image-gallery/dist/style.css";
-import heroStyles from "../components/hero.module.css";
-import ArticlePreview from "../components/article-preview";
 import Hero from "../components/hero";
 
 class BlogPostTemplate extends React.Component {
