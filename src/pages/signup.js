@@ -1,5 +1,4 @@
 import React from "react";
-import { graphql } from "gatsby";
 import get from "lodash/get";
 import { Helmet } from "react-helmet";
 import Hero from "../components/hero";
@@ -54,13 +53,16 @@ class MyGatsbyComponent extends React.Component {
       <div style={{ maxWidth: "600px", margin: "0 auto", paddingTop: "50px" }}>
         <form class="form" onSubmit={this._handleSubmit}>
           <div class="field">
-            <input
-              class="input is-primary"
-              type="text"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleInputChange}
-            />
+            <div class="control">
+              <input
+                class="input is-primary"
+                type="text"
+                name="email"
+                placeholder="Please enter your email address"
+                value={this.state.email}
+                onChange={this.handleInputChange}
+              />
+            </div>
             <div
               class={
                 this.state.response === "success"
@@ -92,6 +94,7 @@ class SignUp extends React.Component {
           as soon as possible."
           >
             <MyGatsbyComponent />
+            <p> We'll never give your information to anybody else. Ever.</p>
           </Hero>
         </div>
       </Layout>
