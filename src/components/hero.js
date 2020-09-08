@@ -1,8 +1,5 @@
 import React, { Children } from "react";
-import Img from "gatsby-image";
-import lightHero from "../assets/images/photo-1545529468-42764ef8c85f.jpeg";
 import styles from "./hero.module.css";
-// import Button from "../components/Button";
 import "../pages/mystyles.scss";
 
 const Hero = ({ title, subtitle, ...props }) => (

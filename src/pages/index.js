@@ -29,7 +29,7 @@ class RootIndex extends React.Component {
           <Helmet title={siteTitle} />
           <Hero
             title="Social experiences for distributed teams"
-            subtitle="Book amazing team-building events which your employees can enjoy from their own homes"
+            subtitle="Book amazing team-building events your employees can enjoy from their own homes"
           >
             <Link to="/signup">
               <button class="button is-primary is-large mt-5 has-text-weight-semibold">
