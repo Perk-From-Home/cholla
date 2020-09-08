@@ -10,13 +10,8 @@ class Template extends React.Component {
     return (
       <Container>
         <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            paddingTop: "5%",
-            width: "100%",
-          }}
+          class="columns is-vcentered is-centered"
+          style={{ justifyContent: "space-between" }}
         >
           <Header />
           <Navigation />
