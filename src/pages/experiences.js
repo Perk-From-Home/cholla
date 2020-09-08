@@ -27,23 +27,8 @@ class RootIndex extends React.Component {
       <Layout location={this.props.location}>
         <div style={{ background: "#fff" }}>
           <Helmet title={siteTitle} />
-          <Hero
-            title="Social experiences for distributed teams"
-            subtitle="Book amazing team-building events which your employees can enjoy from their own homes"
-          >
-            <Link to="/signup">
-              <button class="button is-primary is-large mt-5 has-text-weight-semibold">
-                Join the club
-              </button>
-            </Link>
-          </Hero>
-          <div className="wrapper">
-            <h2 className="section-headline">Featured experiences</h2>
-            <FeaturedSocials socials={socials} />
-          </div>
-          {/* <div className="wrapper">
-            <h2 className="section-headline">Why Cholla?</h2>
-          </div> */}
+          <Hero title="All Experiences"></Hero>
+          <FeaturedSocials socials={socials} />
         </div>
       </Layout>
     );
@@ -53,7 +38,7 @@ class RootIndex extends React.Component {
 export default RootIndex;
 
 export const pageQuery = graphql`
-  query HomeQuery {
+  query ExperiencesQuery {
     allContentfulSocial(sort: { fields: [createdAt], order: DESC }) {
       edges {
         node {

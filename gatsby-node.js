@@ -8,31 +8,14 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve("./src/templates/blog-post.js");
-    const userPage = path.resolve("./src/templates/blog.js");
+
     resolve(
       graphql(
         `
-          query MyQuery {
-            allContentfulPost(filter: {}) {
+          query rootQuery {
+            allContentfulSocial(sort: { fields: [createdAt], order: DESC }) {
               edges {
                 node {
-                  title
-                  slug
-                  createdAt
-                  body {
-                    body
-                  }
-                  user {
-                    name
-                    slug
-                  }
-                }
-              }
-            }
-            allContentfulUser {
-              edges {
-                node {
-                  name
                   slug
                 }
               }
@@ -45,25 +28,13 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors);
         }
 
-        const posts = result.data.allContentfulPost.edges;
-        posts.forEach((post) => {
+        const socials = result.data.allContentfulSocial.edges;
+        socials.forEach((social) => {
           createPage({
-            path: `/blog/${post.node.user.slug}/${post.node.slug}/`,
+            path: `/experiences/${social.node.slug}`,
             component: blogPost,
             context: {
-              slug: post.node.slug,
-            },
-          });
-        });
-
-        const users = result.data.allContentfulUser.edges;
-
-        users.forEach((user) => {
-          createPage({
-            path: `/blog/${user.node.slug}`,
-            component: userPage,
-            context: {
-              slug: user.node.slug,
+              slug: social.node.slug,
             },
           });
         });
