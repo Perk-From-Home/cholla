@@ -8,7 +8,7 @@ import Gallery from "@browniebroke/gatsby-image-gallery";
 import "@browniebroke/gatsby-image-gallery/dist/style.css";
 import heroStyles from "../components/hero.module.css";
 import ArticlePreview from "../components/article-preview";
-import Hero from "../components/Hero";
+import Hero from "../components/hero";
 
 class BlogPostTemplate extends React.Component {
   render() {
