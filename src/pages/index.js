@@ -29,7 +29,7 @@ class RootIndex extends React.Component {
           <Helmet title={siteTitle} />
           <Hero
             title="Social experiences for distributed teams"
-            subtitle="Book amazing team-building events which your employees can enjoy from"
+            subtitle="Book amazing team-building events which your employees can enjoy from their own homes"
           >
             <Link to="/signup">
               <button class="button is-primary mt-5 has-text-weight-semibold">
@@ -41,9 +41,9 @@ class RootIndex extends React.Component {
             <h2 className="section-headline">Featured experiences</h2>
             <FeaturedSocials socials={socials} />
           </div>
-          <div className="wrapper">
+          {/* <div className="wrapper">
             <h2 className="section-headline">Why Cholla?</h2>
-          </div>
+          </div> */}
         </div>
       </Layout>
     );
