@@ -51,7 +51,9 @@ export const pageQuery = graphql`
           }
           minParticipants
           maxParticipants
-          provider
+          supplier {
+	    name
+	  }
           slug
         }
       }

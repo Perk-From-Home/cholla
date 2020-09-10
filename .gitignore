@@ -69,3 +69,6 @@ public
 .contentful.json
 # Local Netlify folder
 .netlify
+
+# Jetbrains
+.idea
