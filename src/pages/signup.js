@@ -37,9 +37,8 @@ class MyGatsbyComponent extends React.Component {
       .then((data) => {
         // I recommend setting data to React state
         // but you can do whatever you want (including ignoring this `then()` altogether)
-        console.log(data);
         this.setState({ message: data.msg });
-        this.setState({ response: data.response });
+        this.setState({ result: data.result });
       })
       .catch(() => {
         // unnecessary because Mailchimp only ever
@@ -65,9 +64,9 @@ class MyGatsbyComponent extends React.Component {
             </div>
             <div
               class={
-                this.state.response === "success"
-                  ? "has-text-success"
-                  : "has-text-danger"
+                this.state.result === "error"
+                  ? "has-text-danger"
+                  : "has-text-success"
               }
             >
               <p dangerouslySetInnerHTML={{ __html: this.state.message }} />
