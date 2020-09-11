@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import Hero from "../components/hero";
 import Layout from "../components/layout";
 import addToMailchimp from "gatsby-plugin-mailchimp";
-import "../pages/mystyles.scss";
+import "./mystyles.scss";
 
 class MyGatsbyComponent extends React.Component {
   // Since `addToMailchimp` returns a promise, you

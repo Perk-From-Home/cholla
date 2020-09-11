@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 import Hero from "../components/hero";
 import Layout from "../components/layout";
 import ArticlePreview from "../components/article-preview";
+import "./mystyles.scss";
 
 const CarouselUI = ({ children }) => <div>{children}</div>;
 const Carousel = makeCarousel(CarouselUI);
@@ -29,7 +30,7 @@ class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, "props.data.site.siteMetadata.title");
     const socials = get(this, "props.data.allContentfulSocial.edges");
-    console.log(socials);
+
     return (
       <Layout location={this.props.location}>
         <div style={{ background: "#fff" }}>
@@ -53,7 +54,6 @@ class RootIndex extends React.Component {
             }}
           >
             <h2
-              className="section-headline"
               style={{
                 borderBottom: " 1px solid #ddd",
                 padding: "0 0 0.4em 0",
