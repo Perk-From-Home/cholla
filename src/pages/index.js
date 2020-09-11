@@ -8,22 +8,27 @@ import Hero from "../components/hero";
 import Layout from "../components/layout";
 import ArticlePreview from "../components/article-preview";
 import "./mystyles.scss";
+import styled, { css } from "styled-components";
 
-const CarouselUI = ({ children }) => <div>{children}</div>;
+const Container = styled.div`
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+`;
+
+const CarouselUI = ({ children }) => <Container>{children}</Container>;
 const Carousel = makeCarousel(CarouselUI);
 
 const FeaturedSocials = ({ socials }) => (
-  <div style={{ position: "relative" }}>
-    <Carousel defaultWait={4000} maxTurns={1000}>
-      {socials.map(({ node }) => {
-        return (
-          <Slide left>
-            <ArticlePreview social={node} />
-          </Slide>
-        );
-      })}
-    </Carousel>
-  </div>
+  <Carousel defaultWait={4000} maxTurns={1000}>
+    {socials.map(({ node }) => {
+      return (
+        <Slide left>
+          <ArticlePreview social={node} />
+        </Slide>
+      );
+    })}
+  </Carousel>
 );
 
 class RootIndex extends React.Component {
@@ -33,7 +38,7 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: "#fff" }}>
+        <div style={{ background: "#fff", paddingBottom: "30px" }}>
           <Helmet title={siteTitle} />
           <Hero
             title="Social experiences for distributed teams"
@@ -65,9 +70,6 @@ class RootIndex extends React.Component {
             </h2>
             <FeaturedSocials socials={socials} />
           </div>
-          {/* <div className="wrapper">
-            <h2 className="section-headline">Why Cholla?</h2>
-          </div> */}
         </div>
       </Layout>
     );

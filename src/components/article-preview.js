@@ -8,7 +8,10 @@ export default ({ social }) => {
   return (
     //TODO: link this to an individual, per-s
     <Link to={`/signup`}>
-      <div class="card" style={{ maxWidth: "300px", margin: "0 auto" }}>
+      <div
+        class="card"
+        style={{ maxWidth: "300px", margin: "0 auto", marginBottom: "3vh" }}
+      >
         <div class="card-image">
           <Img
             aspectRatio="1"
