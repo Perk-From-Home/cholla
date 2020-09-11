@@ -21,7 +21,7 @@ export default ({ social }) => {
             <div class="media-content">
               <p class="title is-4">{social.name}</p>
               <p class="subtitle is-6 has-text-primary-dark">
-                {social.provider}
+                with {social.supplier.name}
               </p>
             </div>
           </div>
