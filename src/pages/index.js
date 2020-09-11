@@ -41,7 +41,7 @@ class RootIndex extends React.Component {
           >
             <Link to="/signup">
               <button class="button is-primary is-large mt-5 has-text-weight-semibold">
-                Join the club
+                <h2>Join the club</h2>
               </button>
             </Link>
           </Hero>
