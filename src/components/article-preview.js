@@ -7,7 +7,7 @@ import Img from "gatsby-image";
 export default ({ social }) => {
   return (
     //TODO: link this to an individual, per-s
-    <Link to={`/experiences/${social.slug}`}>
+    <Link to={`/signup`}>
       <div class="card" style={{ maxWidth: "300px", margin: "0 auto" }}>
         <div class="card-image">
           <Img
