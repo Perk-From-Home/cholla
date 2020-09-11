@@ -84,23 +84,15 @@ export const pageQuery = graphql`
           name
           shortDescription
           coverImage {
-<<<<<<< HEAD
-            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
-=======
             fluid(maxWidth: 6000, maxHeight: 6000, resizingBehavior: CROP) {
->>>>>>> bb0a7b1ebec5b6cf83f52a86e0929e06efc270c0
               ...GatsbyContentfulFluid
             }
           }
           minParticipants
           maxParticipants
-<<<<<<< HEAD
-          provider
-=======
           supplier {
-	    name
-	  }
->>>>>>> bb0a7b1ebec5b6cf83f52a86e0929e06efc270c0
+            name
+          }
           slug
         }
       }

@@ -11,6 +11,19 @@ altonTheme.overrideStyles = ({ rhythm }, options) => ({
     fontWeight: "normal",
   },
 });
+
+altonTheme.googleFonts = [
+  {
+    name: "Fenix",
+    styles: ["400"],
+  },
+  {
+    name: "Open Sans",
+    styles: ["400", "400i", "700", "700i"],
+  },
+];
+altonTheme.headerFontFamily = ["Fenix", "serif"];
+
 const typography = new Typography(altonTheme);
 
 export default typography;
