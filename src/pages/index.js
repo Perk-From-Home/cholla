@@ -1,4 +1,6 @@
 import React from "react";
+import makeCarousel from 'react-reveal/makeCarousel';
+import Slide from 'react-reveal/Slide';
 import { graphql, Link } from "gatsby";
 import get from "lodash/get";
 import { Helmet } from "react-helmet";
@@ -6,15 +8,20 @@ import Hero from "../components/hero";
 import Layout from "../components/layout";
 import ArticlePreview from "../components/article-preview";
 
+const CarouselUI = ({ children }) => <div>{children}</div>;
+const Carousel = makeCarousel(CarouselUI);
+
 const FeaturedSocials = ({ socials }) => (
-  <div className="columns row">
-    {socials.map(({ node }) => {
-      return (
-        <div className="column">
-          <ArticlePreview social={node} />
-        </div>
-      );
-    })}
+  <div style={{position: "relative"}}>
+    <Carousel defaultWait={4000} maxTurns={1000}>
+      {socials.map(({ node }) => {
+        return (
+	    <Slide left>
+              <ArticlePreview social={node} />
+	    </Slide>
+        );
+      })}
+    </Carousel>
   </div>
 );
 
@@ -77,13 +84,15 @@ export const pageQuery = graphql`
           name
           shortDescription
           coverImage {
-            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
+            fluid(maxWidth: 6000, maxHeight: 6000, resizingBehavior: CROP) {
               ...GatsbyContentfulFluid
             }
           }
           minParticipants
           maxParticipants
-          provider
+          supplier {
+	    name
+	  }
           slug
         }
       }
